@@ -17,7 +17,6 @@ alias lt='ls -ltr'
 ################################################################################
 #                                GOTO Commands                                 #
 ################################################################################
-alias gen='cd /data/2015-brown_dwarf-disk_mass/radiativeTransferModels/genetic_results/'
 alias pipe='cd /home/equant/research/herschel/pythonScripts/pipeline'
 alias gnsf='cd /home/equant/research/funding/2016/nsf'
 
