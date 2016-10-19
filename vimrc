@@ -21,12 +21,12 @@ let loaded_matchparen = 1  " fools vim into thinking that this module is already
 " Indent entire file.
 nnoremap @I :normal gg=G''<CR>
 " Open Thunar where I am...
-au BufEnter,BufNew *.mkd nnoremap <leader>t :! thunar &<CR><CR>.
+nnoremap <leader>t :! thunar &<CR><CR>.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          External Compiler Commands                          "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au BufEnter,BufNew *.tex nnoremap <leader>c :w<CR>:!rubber --pdf --unsafe %<CR>
+au BufEnter,BufNew *.tex nnoremap <leader>c :w<CR>:!rubber --synctex --pdf --unsafe %<CR>
 au BufEnter,BufNew *.py   nnoremap <leader>c :w<CR>:!python %<CR>
 au BufEnter,BufNew *.mkd nnoremap <leader>c :w<CR>:!pandoc % > %:r.html<CR>
 
@@ -36,6 +36,9 @@ au BufEnter,BufNew *.mkd nnoremap <leader>c :w<CR>:!pandoc % > %:r.html<CR>
 au BufEnter,BufNew *.tex nnoremap <leader>v :!zathura %:r.pdf &<CR><CR>.
 au BufEnter,BufNew *.py   nnoremap <leader>v :!zathura plot_working.pdf &<CR><CR>.
 au BufEnter,BufNew *.mkd nnoremap <leader>v :!chromium --user-data-dir=/home/equant/.config/chromium/vim_profile %:r.html &<CR><CR>.
+
+"map <C-enter> :call Synctex()<cr>
+map <leader>z :execute "!zathura --synctex-forward " . line(".") . ":" . col(".") . ":" . bufname('%') . " " . expand("%:r") . ".pdf"<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                Worklog Tools                                 "
@@ -73,3 +76,14 @@ au BufEnter,BufNew .vimrc nnoremap <leader>b :center 80<cr>0r"<space><esc>40A <e
 "set cursorline          " draws a horizontal line on the line your cursor is currently on
 "set softtabstop=4
 "au BufEnter,BufNew *.mkd nnoremap <leader>v :!firefox -new-window %:r.html &<CR><CR>.
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                               SYNCTEX Testing                                "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <F9>   :exec "!szathura %:r.pdf" line('.')  col('.') "% > /dev/null"<cr><cr>
+function! Synctex()
+    " remove 'silent' for debugging
+    execute "!zathura --synctex-forward " . line('.') . ":" . col('.') . ":" . bufname('%') . " " . g:syncpdf
+    "execute "silent !zathura --synctex-forward " . line('.') . ":" . col('.') . ":" . bufname('%') . " " . g:syncpdf
+endfunction
+
