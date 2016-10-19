@@ -22,6 +22,7 @@ let loaded_matchparen = 1  " fools vim into thinking that this module is already
 nnoremap @I :normal gg=G''<CR>
 " Open Thunar where I am...
 nnoremap <leader>t :! thunar &<CR><CR>.
+set tags=./tags;        " ctags -R .
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          External Compiler Commands                          "

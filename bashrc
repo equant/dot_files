@@ -32,12 +32,6 @@ alias mkdb='mkdir -p backups/$(ddate); cp -p *.* backups/$(ddate)/; mv -p .*.sw*
 alias cv='~/bin/casa-release-4.5.2-el6/casaviewer'
 
 ################################################################################
-#                                     Misc                                     #
-################################################################################
-alias mcprog='echo "Running..." ; ps aux | grep -i MCMaxLinux | wc -l; echo "Done..." ; ls -1 */done | wc -l'
-alias ljup='cd ~ ; jupyter notebook --certfile=.jupyter/mycert.pem --keyfile .jupyter/mykey.key'
-
-################################################################################
 #                            External Bash Scripts                             #
 ################################################################################
 . ~/bin/my_bash_tools/pdf_search.bash
@@ -47,3 +41,5 @@ alias ljup='cd ~ ; jupyter notebook --certfile=.jupyter/mycert.pem --keyfile .ju
 ################################################################################
 #alias mkdb='mkdir -p backups/$(date +%Y%m%d)'
 #alias prop='cd /home/equant/research/alma/proposals/cycle-04/snow_line_vs_mass_accretion_rate'
+#alias mcprog='echo "Running..." ; ps aux | grep -i MCMaxLinux | wc -l; echo "Done..." ; ls -1 */done | wc -l'
+#alias ljup='cd ~ ; jupyter notebook --certfile=.jupyter/mycert.pem --keyfile .jupyter/mykey.key'
