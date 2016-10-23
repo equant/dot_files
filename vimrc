@@ -2,8 +2,7 @@
 " :source ~/.vimrc
 set nocompatible              " required
 execute pathogen#infect()
-"filetype off
-
+map <Space> <Leader>
 colorscheme badwolf
 syntax enable
 set tabstop=4
@@ -37,6 +36,8 @@ au BufEnter,BufNew *.mkd nnoremap <leader>c :w<CR>:!pandoc % > %:r.html<CR>
 au BufEnter,BufNew *.tex nnoremap <leader>v :!zathura %:r.pdf &<CR><CR>.
 au BufEnter,BufNew *.py   nnoremap <leader>v :!zathura plot_working.pdf &<CR><CR>.
 au BufEnter,BufNew *.mkd nnoremap <leader>v :!chromium --user-data-dir=/home/equant/.config/chromium/vim_profile %:r.html &<CR><CR>.
+" I am using the firefox add-on "Markdown Viewer by Thiht to make the following work:
+au BufEnter,BufNew *.md nnoremap <leader>v :!firefox -new-window % &<CR><CR>.
 
 "map <C-enter> :call Synctex()<cr>
 map <leader>z :execute "!zathura --synctex-forward " . line(".") . ":" . col(".") . ":" . bufname('%') . " " . expand("%:r") . ".pdf"<CR><CR>
@@ -45,15 +46,14 @@ map <leader>z :execute "!zathura --synctex-forward " . line(".") . ":" . col("."
 "                                Worklog Tools                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 iab xdate <c-r>=strftime('%c')<cr>
-map <Space> <Leader>
 nmap <leader>w i# xdate<esc>:r!pwd<CR>I## <esc>$o<CR>1. 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                              Buffer Navigation                               "
 " - I use buftabline.vim                                                       "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>d :bd<CR>
-nnoremap <leader>t :tab all<CR>
+"nnoremap <leader>d :bd<CR>
+"nnoremap <leader>t :tab all<CR>
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
 
@@ -64,6 +64,8 @@ nnoremap <leader>b :center 80<cr>0r#<space><esc>40A <esc>d80<bar>r#YppVr#kk.
 au BufEnter,BufNew *.tex nnoremap <leader>b :center 80<cr>0r%<space><esc>40A <esc>d80<bar>r%YppVr%kk.
 au BufEnter,BufNew *.py nnoremap <leader>b :center 80<cr>0r#<space><esc>40A <esc>d80<bar>r#YppVr#kk.
 au BufEnter,BufNew .vimrc nnoremap <leader>b :center 80<cr>0r"<space><esc>40A <esc>d80<bar>r"YppVr"kk.
+" .in -> MCMax
+au BufEnter,BufNew .in nnoremap <leader>b :center 80<cr>0r*<space><esc>40A <esc>d80<bar>r*YppVr*kk.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     Old Things Left For Future Reference                     "
@@ -77,6 +79,7 @@ au BufEnter,BufNew .vimrc nnoremap <leader>b :center 80<cr>0r"<space><esc>40A <e
 "set cursorline          " draws a horizontal line on the line your cursor is currently on
 "set softtabstop=4
 "au BufEnter,BufNew *.mkd nnoremap <leader>v :!firefox -new-window %:r.html &<CR><CR>.
+"filetype off
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                               SYNCTEX Testing                                "

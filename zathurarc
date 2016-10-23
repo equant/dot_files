@@ -1,6 +1,6 @@
 set completion-bg #000000
 set default-bg #000000
 
-set highlight-transparency 0.1
+set highlight-transparency 0.4
 set highlight-color "#AABBCC"
 set highlight-active-color "#FF0000"
