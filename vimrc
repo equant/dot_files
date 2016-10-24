@@ -60,12 +60,12 @@ nnoremap <C-P> :bprev<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                Comment Boxes                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>b :center 80<cr>0r#<space><esc>40A <esc>d80<bar>r#YppVr#kk.
-au BufEnter,BufNew *.tex nnoremap <leader>b :center 80<cr>0r%<space><esc>40A <esc>d80<bar>r%YppVr%kk.
-au BufEnter,BufNew *.py nnoremap <leader>b :center 80<cr>0r#<space><esc>40A <esc>d80<bar>r#YppVr#kk.
-au BufEnter,BufNew .vimrc nnoremap <leader>b :center 80<cr>0r"<space><esc>40A <esc>d80<bar>r"YppVr"kk.
+nnoremap <leader>b :center 50<cr>0r#<space><esc>40A <esc>d50<bar>r#YppVr#kk.
+au BufEnter,BufNew *.tex nnoremap <leader>b :center 50<cr>0r%<space><esc>40A <esc>d50<bar>r%YppVr%kk.
+au BufEnter,BufNew *.py nnoremap <leader>b :center 50<cr>0r#<space><esc>40A <esc>d50<bar>r#YppVr#kk.
+au BufEnter,BufNew .vimrc nnoremap <leader>b :center 50<cr>0r"<space><esc>40A <esc>d50<bar>r"YppVr"kk.
 " .in -> MCMax
-au BufEnter,BufNew .in nnoremap <leader>b :center 80<cr>0r*<space><esc>40A <esc>d80<bar>r*YppVr*kk.
+au BufEnter,BufNew .in nnoremap <leader>b :center 50<cr>0r*<space><esc>40A <esc>d50<bar>r*YppVr*kk.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     Old Things Left For Future Reference                     "
