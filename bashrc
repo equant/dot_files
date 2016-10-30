@@ -17,8 +17,12 @@ alias lt='ls -ltr'
 ################################################################################
 #                                GOTO Commands                                 #
 ################################################################################
-alias pipe='cd /home/equant/research/herschel/pythonScripts/pipeline'
-alias gnsf='cd /home/equant/research/funding/2016/nsf'
+export ggsl=/home/equant/research/scattered_light_water_absorption
+export ggnsf=/home/equant/research/funding/nsf/2016
+
+alias pipe="cd /home/equant/research/herschel/pythonScripts/pipeline"
+alias ggnsf="cd $ggnsf"
+alias ggsl="cd $ggsl"
 
 ################################################################################
 #                                 Make Backups                                 #
