@@ -14,15 +14,26 @@ PS1='[\u@\h \W]\$ '
 alias ll='ls -l --color=auto'
 alias lt='ls -ltr'
 
+alias rmtex='rm *.bbl *.aux msNotes.bib *.synctex.gz *.blg *.log'
+
+#alias fn='firefox -new-window % &
+
+
+function fn {
+    firefox -new-window $1 &
+}
+
 ################################################################################
 #                                GOTO Commands                                 #
 ################################################################################
 export ggsl=/home/equant/research/scattered_light_water_absorption
 export ggnsf=/home/equant/research/funding/nsf/2016
+export ggw=/home/equant/research/disk-snowlines
 
 alias pipe="cd /home/equant/research/herschel/pythonScripts/pipeline"
 alias ggnsf="cd $ggnsf"
 alias ggsl="cd $ggsl"
+alias ggw="cd $ggw"
 
 ################################################################################
 #                                 Make Backups                                 #
