@@ -1,9 +1,9 @@
 " to reload:
 " :source ~/.vimrc
 set nocompatible              " required
-execute pathogen#infect()
+"execute pathogen#infect()
 map <Space> <Leader>
-colorscheme badwolf
+"colorscheme badwolf
 syntax enable
 set tabstop=4
 set shiftwidth=4
@@ -52,7 +52,11 @@ au BufReadCmd *.pdf silent !/usr/bin/zathura % &
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 iab xdate <c-r>=strftime('%c')<cr>
 "nmap <leader>w i## TITLE<esc>:r!pwd<CR>I## xdate<esc>$o<CR>1.<esc>?TITLE<CR>
-nmap <leader>w i## WorklogEntry<CR>#### xdate<esc>$o<CR>1.<esc>?WorklogEntry<CR>cw
+"nmap <leader>w i## WorklogEntry<CR>#### xdate<esc>$o<CR>1.<esc>?WorklogEntry<CR>cw
+
+"Tim's original...
+"map <leader>w :silent! badd WORKLOG.md<CR>:b WORKLOG.md<CR>G:r!date<CR>GA 
+map <leader>w :silent! badd WORKLOG.md<CR>:b WORKLOG.md<CR>GA<CR>#### Wed 09 Nov 2016 08:56:25 PM MST<CR><CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                              Buffer Navigation                               "
