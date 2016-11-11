@@ -61,8 +61,8 @@ if [ -f ~/git/my_bash_tools/pdf_search.bash ]; then
     . ~/git/my_bash_tools/pdf_search.bash
 fi
 
-if [ -f ~/git/my_bash_tools/mmgm.bash ]; then
-    . ~/git/my_bash_tools/mmgm.bash
+if [ -f ~/git/my_bash_tools/mmgg.bash ]; then
+    . ~/git/my_bash_tools/mmgg.bash
 fi
 
 
