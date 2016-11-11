@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 export PATH=$PATH:~/bin/:~/bin/my_bash_tools:~/bin/casa/bin
-export LD_LIBRARY_PATH=/home/equant/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/lib
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
@@ -26,11 +26,11 @@ function fn {
 ################################################################################
 #                                GOTO Commands                                 #
 ################################################################################
-export ggsl=/home/equant/research/scattered_light_water_absorption
-export ggnsf=/home/equant/research/funding/nsf/2016
-export ggw=/home/equant/research/disk-snowlines
+export ggsl=~/research/scattered_light_water_absorption
+export ggnsf=~/research/funding/nsf/2016
+export ggw=~/research/disk-snowlines
 
-alias pipe="cd /home/equant/research/herschel/pythonScripts/pipeline"
+alias pipe="cd ~/research/herschel/pythonScripts/pipeline"
 alias ggnsf="cd $ggnsf"
 alias ggsl="cd $ggsl"
 alias ggw="cd $ggw"
@@ -46,10 +46,25 @@ alias mkdb='mkdir -p backups/$(ddate); cp -p *.* backups/$(ddate)/; mv -p .*.sw*
 ################################################################################
 alias cv='~/bin/casa-release-4.5.2-el6/casaviewer'
 
+##################################################
+#     Directory Bookmarks (vimish bindings)      #
+##################################################
+
+#alias mm='export mm=`pwd`'
+#alias gm='cd $mm'
+
+
 ################################################################################
 #                            External Bash Scripts                             #
 ################################################################################
-. ~/bin/my_bash_tools/pdf_search.bash
+if [ -f ~/git/my_bash_tools/pdf_search.bash ]; then
+    . ~/git/my_bash_tools/pdf_search.bash
+fi
+
+if [ -f ~/git/my_bash_tools/mmgm.bash ]; then
+    . ~/git/my_bash_tools/mmgm.bash
+fi
+
 
 ################################################################################
 #                                  Dead Wood                                   #
