@@ -56,7 +56,7 @@ iab xdate <c-r>=strftime('%c')<cr>
 
 "Tim's original...
 "map <leader>w :silent! badd WORKLOG.md<CR>:b WORKLOG.md<CR>G:r!date<CR>GA 
-map <leader>w :silent! badd WORKLOG.md<CR>:b WORKLOG.md<CR>GA<CR>#### Wed 09 Nov 2016 08:56:25 PM MST<CR><CR>
+map <leader>w :silent! badd WORKLOG.md<CR>:b WORKLOG.md<CR>GA<CR>#### xdate<CR><CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                              Buffer Navigation                               "
