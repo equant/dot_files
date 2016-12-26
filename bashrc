@@ -6,6 +6,8 @@
 [[ $- != *i* ]] && return
 
 export PATH=$PATH:~/bin/:~/bin/my_bash_tools:~/bin/casa/bin
+export PATH=$PATH:~/research/disk-snowlines/src/modeling
+export PATH=$PATH:~/research/disk-snowlines/src/visualization
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/lib
 
 alias ls='ls --color=auto'
@@ -22,6 +24,9 @@ alias rmtex='rm *.bbl *.aux msNotes.bib *.synctex.gz *.blg *.log'
 function fn {
     firefox -new-window $1 &
 }
+
+
+alias bf='python ~/research/disk-snowlines/src/models/bayessianFoo.py'
 
 ################################################################################
 #                                GOTO Commands                                 #

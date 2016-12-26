@@ -21,7 +21,7 @@ let loaded_matchparen = 1  " fools vim into thinking that this module is already
 nnoremap @I :normal gg=G''<CR>
 " Open Thunar where I am...
 nnoremap <leader>t :! thunar &<CR><CR>.
-set tags=./tags;        " ctags -R .
+set tags=~/research/disk-snowlines/tags;        " ctags -R .
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          External Compiler Commands                          "
@@ -56,7 +56,7 @@ iab xdate <c-r>=strftime('%c')<cr>
 
 "Tim's original...
 "map <leader>w :silent! badd WORKLOG.md<CR>:b WORKLOG.md<CR>G:r!date<CR>GA 
-map <leader>w :silent! badd WORKLOG.md<CR>:b WORKLOG.md<CR>GA<CR>#### xdate<CR><CR>
+map <leader>w :silent! badd ~/research/current/WORKLOG.md<CR>:b ~/research/current/WORKLOG.md<CR>GA<CR>#### xdate<CR><CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                              Buffer Navigation                               "
