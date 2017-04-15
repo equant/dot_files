@@ -3,7 +3,7 @@
 set nocompatible              " required
 "execute pathogen#infect()
 map <Space> <Leader>
-"colorscheme badwolf
+colorscheme jellybeans
 syntax enable
 set tabstop=4
 set shiftwidth=4
