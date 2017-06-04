@@ -6,8 +6,10 @@
 [[ $- != *i* ]] && return
 
 export PATH=$PATH:~/bin/:~/bin/my_bash_tools:~/bin/casa/bin
-export PATH=$PATH:~/research/disk-snowlines/src/modeling
-export PATH=$PATH:~/research/disk-snowlines/src/visualization
+#export PATH=$PATH:~/research/disk-snowlines/src/modeling
+#export PATH=$PATH:~/research/disk-snowlines/src/visualization
+export PATH=$PATH:~/research/tcha/src/modeling
+export PATH=$PATH:~/research/tcha/src/visualization
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/lib
 
 alias ls='ls --color=auto'
@@ -26,19 +28,20 @@ function fn {
 }
 
 
-alias bf='python ~/research/disk-snowlines/src/models/bayessianFoo.py'
+#alias bf='python ~/research/disk-snowlines/src/models/bayessianFoo.py'
 
 ################################################################################
 #                                GOTO Commands                                 #
 ################################################################################
-export ggsl=~/research/scattered_light_water_absorption
-export ggnsf=~/research/funding/nsf/2016
-export ggw=~/research/disk-snowlines
+#goto commands are now handled with mm/gg.
+#export ggsl=~/research/scattered_light_water_absorption
+#export ggnsf=~/research/funding/nsf/2016
+#export ggw=~/research/disk-snowlines
 
 alias pipe="cd ~/research/herschel/pythonScripts/pipeline"
-alias ggnsf="cd $ggnsf"
-alias ggsl="cd $ggsl"
-alias ggw="cd $ggw"
+#alias ggnsf="cd $ggnsf"
+#alias ggsl="cd $ggsl"
+#alias ggw="cd $ggw"
 
 ################################################################################
 #                                 Make Backups                                 #

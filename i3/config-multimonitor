@@ -5,10 +5,10 @@
 # this file and re-run i3-config-wizard(1).
 #
 
-set $default_gaps_inner 1
-set $default_gaps_outer 1
-gaps inner 1
-gaps outer 1
+#set $default_gaps_inner 1
+#set $default_gaps_outer 1
+#gaps inner 1
+#gaps outer 1
 
 
 # i3 config file (v4)
@@ -39,7 +39,7 @@ set $n5 i3
 # calendar
 bindsym $mod+c exec gsimplecal
 bindsym $mod+m exec zathura ~/tmp/monitor.pdf
-bindsym $mod+p exec zathura ~/research/thesis/ms.pdf
+bindsym $mod+p exec zathura ~/research/paper_brown_dwarf_disks/ms.pdf
 
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
@@ -181,6 +181,11 @@ for_window [class= "gnuplot_qt" title="^Gnuplot"] floating enable
 for_window [class= "Evince-previewer"] floating enable
 for_window [title="^/home/equant/tmp/monitor"] floating enable
 for_window [title="plot_working.pdf"] floating enable
+for_window [class= "Firefox" title="^My Worklog"] floating enable
+for_window [class= "Thunar"] floating enable
+for_window [class= "Casalogger"] floating enable
+for_window [title= "Subebox"] floating enable
+for_window [title= "Subibox"] floating enable
 
 # HIPE
 for_window [class="com-sun-javaws-Main" title="Login"] floating enable
@@ -221,12 +226,15 @@ floating_modifier $mod
 bindsym $mod+Return exec terminator
 
 
-# Floating terminals
-for_window [class= "Terminator" title="^FloatMe"] floating enable
-bindsym $mod+backslash exec terminator -T FloatMe
+##################################################
+#               Floating terminals               #
+##################################################
+for_window [class= "Terminator" title="^Scratch"] floating enable
+bindsym $mod+backslash exec terminator -T Scratch
 
 # Open my worklog in a floating terminal (the '+' tells vim to go to the end of the file after opening it).
-bindsym $mod+Shift+backslash exec terminator -T FloatMe -x /usr/bin/vim + /home/equant/research/worklog.md
+for_window [class= "Terminator" title="^Worklog"] floating toggle
+bindsym $mod+Shift+backslash exec terminator -T Worklog -x /usr/bin/vim + /home/equant/research/WORKLOG.md
 
 
 # kill focused window
