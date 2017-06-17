@@ -8,6 +8,7 @@
 export PATH=$PATH:~/bin/:~/bin/my_bash_tools:~/bin/casa/bin
 export PATH=$PATH:~/research/disk-snowlines/src/modeling
 export PATH=$PATH:~/research/disk-snowlines/src/visualization
+export PATH=$PATH:~/projects/luatool/luatool
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/lib
 
 alias ls='ls --color=auto'

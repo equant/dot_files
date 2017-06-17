@@ -1,7 +1,7 @@
 " to reload:
 " :source ~/.vimrc
 set nocompatible              " required
-"execute pathogen#infect()
+execute pathogen#infect()
 map <Space> <Leader>
 colorscheme jellybeans
 syntax enable
