@@ -14,7 +14,9 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/lib
 alias ls='ls --color=auto'
 
 alias ll='ls -l --color=auto'
-alias lt='ls -ltr | head -n $LINES'
+alias lt='ls -ltr | tail -n $LINES'
+alias zp='zathura *.pdf &'
+alias bb='. ~/.bashrc'
 
 alias rmtex='rm *.bbl *.aux msNotes.bib *.synctex.gz *.blg *.log'
 
