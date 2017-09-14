@@ -14,6 +14,8 @@ set hidden              " let me change buffers even if they have unsaved conten
 
 let loaded_matchparen = 1  " fools vim into thinking that this module is already loaded
 
+set iskeyword+=:        " For latex tab completion (e.g. plot:radial_intensity)
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                    Misc.                                     "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
