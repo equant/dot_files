@@ -2,6 +2,9 @@
 # ~/.bashrc
 #
 
+export PAGER=/usr/bin/less
+export EDITOR=/usr/bin/vim
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -128,3 +131,6 @@ fi
 #alias prop='cd /home/equant/research/alma/proposals/cycle-04/snow_line_vs_mass_accretion_rate'
 #alias mcprog='echo "Running..." ; ps aux | grep -i MCMaxLinux | wc -l; echo "Done..." ; ls -1 */done | wc -l'
 #alias ljup='cd ~ ; jupyter notebook --certfile=.jupyter/mycert.pem --keyfile .jupyter/mykey.key'
+
+# added by Miniconda3 4.3.21 installer
+export PATH="/home/equant/bin/miniconda3/bin:$PATH"
