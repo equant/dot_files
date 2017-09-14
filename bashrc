@@ -23,6 +23,8 @@ alias bb='. ~/.bashrc'
 
 alias rmtex='rm *.bbl *.aux msNotes.bib *.synctex.gz *.blg *.log'
 
+alias mycasa='casa --nologger --log2term'
+
 #alias fn='firefox -new-window % &
 
 
