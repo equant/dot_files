@@ -39,7 +39,7 @@ set $n5 i3
 # calendar
 bindsym $mod+c exec gsimplecal
 bindsym $mod+m exec zathura ~/tmp/monitor.pdf
-bindsym $mod+p exec zathura ~/research/paper_brown_dwarf_disks/ms.pdf
+bindsym $mod+p exec zathura /home/equant/research/tcha/reports/publications/letter/10291862dxksqgkrckjt/main.pdf
 
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
