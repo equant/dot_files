@@ -3,7 +3,7 @@
 set nocompatible              " required
 execute pathogen#infect()
 map <Space> <Leader>
-colorscheme jellybeans
+"colorscheme badwolf
 syntax enable
 set tabstop=4
 set shiftwidth=4
@@ -23,7 +23,8 @@ set iskeyword+=:        " For latex tab completion (e.g. plot:radial_intensity)
 nnoremap @I :normal gg=G''<CR>
 " Open Thunar where I am...
 nnoremap <leader>t :! thunar &<CR><CR>.
-set tags=~/research/disk-snowlines/tags;        " ctags -R .
+"set tags=~/research/disk-snowlines/tags;        " ctags -R .
+set tags=tags;
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          External Compiler Commands                          "
@@ -31,6 +32,16 @@ set tags=~/research/disk-snowlines/tags;        " ctags -R .
 au BufEnter,BufNew *.tex nnoremap <leader>c :w<CR>:!rubber --synctex --pdf --unsafe %<CR>
 au BufEnter,BufNew *.py   nnoremap <leader>c :w<CR>:!python %<CR>
 au BufEnter,BufNew *.mkd nnoremap <leader>c :w<CR>:!pandoc % > %:r.html<CR>
+
+"pandoc foo.md \
+"       --output=foo.html \
+"       --to=html5 \
+"       --css=$HOME/.local/share/markdown-css/tufte.css \
+"       --highlight-style=haddock \
+"       --self-contained \
+"       --smart
+
+au BufEnter,BufNew *.md nnoremap <leader>c :w<CR>:!pandoc % --output=%:r.html --to=html5 --css=$HOME/.local/share/markdown-css/github.css --highlight-style=haddock --self-contained --smart <CR>:!pandoc %:r.html --output=%:r.pdf<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           External Viewer Commands                           "
@@ -55,10 +66,13 @@ au BufReadCmd *.pdf silent !/usr/bin/zathura % &
 iab xdate <c-r>=strftime('%c')<cr>
 "nmap <leader>w i## TITLE<esc>:r!pwd<CR>I## xdate<esc>$o<CR>1.<esc>?TITLE<CR>
 "nmap <leader>w i## WorklogEntry<CR>#### xdate<esc>$o<CR>1.<esc>?WorklogEntry<CR>cw
+nmap <leader>w o<CR>### xdate<CR><CR>
+
 
 "Tim's original...
 "map <leader>w :silent! badd WORKLOG.md<CR>:b WORKLOG.md<CR>G:r!date<CR>GA 
-map <leader>w :silent! badd ~/research/current/WORKLOG.md<CR>:b ~/research/current/WORKLOG.md<CR>GA<CR>#### xdate<CR><CR>
+"map <leader>w :silent! badd ~/research/current/WORKLOG.md<CR>:b ~/research/current/WORKLOG.md<CR>GA<CR>#### xdate<CR><CR>
+"map <leader>w :silent! badd ~/research/WORKLOG.md<CR>:b ~/research/WORKLOG.md<CR>GA<CR><CR>#### xdate<CR><CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                              Buffer Navigation                               "
@@ -68,6 +82,7 @@ map <leader>w :silent! badd ~/research/current/WORKLOG.md<CR>:b ~/research/curre
 "nnoremap <leader>t :tab all<CR>
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
+noremap <Leader><Leader> <C-^>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                Comment Boxes                                 "
