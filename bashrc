@@ -135,4 +135,4 @@ fi
 #alias ljup='cd ~ ; jupyter notebook --certfile=.jupyter/mycert.pem --keyfile .jupyter/mykey.key'
 
 # added by Miniconda3 4.3.21 installer
-export PATH="/home/equant/bin/miniconda3/bin:$PATH"
+#export PATH="/home/equant/bin/miniconda3/bin:$PATH"
