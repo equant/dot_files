@@ -1,7 +1,25 @@
 " to reload:
 " :source ~/.vimrc
 set nocompatible              " required
-execute pathogen#infect()
+filetype off
+set encoding=utf-8
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'vim-scripts/indentpython.vim'
+" Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+"execute pathogen#infect()
 map <Space> <Leader>
 "colorscheme badwolf
 syntax enable
@@ -14,6 +32,16 @@ set hidden              " let me change buffers even if they have unsaved conten
 
 let loaded_matchparen = 1  " fools vim into thinking that this module is already loaded
 
+set autochdir
+
+"au BufNewFile,BufRead *.py
+"    \ set tabstop=4
+"    \ set softtabstop=4
+"    \ set shiftwidth=4
+"    \ set textwidth=79
+"    \ set expandtab
+"    \ set autoindent
+"    \ set fileformat=unix
 set iskeyword+=:        " For latex tab completion (e.g. plot:radial_intensity)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -23,8 +51,8 @@ set iskeyword+=:        " For latex tab completion (e.g. plot:radial_intensity)
 nnoremap @I :normal gg=G''<CR>
 " Open Thunar where I am...
 nnoremap <leader>t :! thunar &<CR><CR>.
+set tags=tags,../tags,../../tags
 "set tags=~/research/disk-snowlines/tags;        " ctags -R .
-set tags=tags;
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          External Compiler Commands                          "
