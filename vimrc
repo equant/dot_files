@@ -69,7 +69,9 @@ au BufEnter,BufNew *.mkd nnoremap <leader>c :w<CR>:!pandoc % > %:r.html<CR>
 "       --self-contained \
 "       --smart
 
-au BufEnter,BufNew *.md nnoremap <leader>c :w<CR>:!pandoc % --output=%:r.html --to=html5 --css=$HOME/.local/share/markdown-css/github.css --highlight-style=haddock --self-contained --smart <CR>:!pandoc %:r.html --output=%:r.pdf<CR>
+au BufEnter,BufNew *.md nnoremap <leader>c :w<CR>:!pandoc % --output=%:r.html --to=html5 --css=$HOME/.local/share/markdown-css/github.css --highlight-style=haddock --self-contained --smart <CR>:!pandoc %:r.md -o %:r.pdf --latex-engine=xelatex<CR>
+
+au BufEnter,BufNew *.txt nnoremap <leader>c :w<CR>:!pandoc -s --from rst --toc % -o %:r.html --to=html5 --css=$HOME/.local/share/markdown-css/github.css --highlight-style=haddock --self-contained --smart <CR>:!pandoc --from rst --toc % -o %:r.pdf --latex-engine=xelatex --highlight-style=haddock --self-contained --smart<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           External Viewer Commands                           "
@@ -80,6 +82,7 @@ au BufEnter,BufNew *.py   nnoremap <leader>v :!zathura plot_working.pdf &<CR><CR
 au BufEnter,BufNew *.mkd nnoremap <leader>v :!chromium --user-data-dir=/home/equant/.config/chromium/vim_profile --app=%:r.html &<CR><CR>.
 " I am using the firefox add-on "Markdown Viewer by Thiht to make the following work:
 au BufEnter,BufNew *.md nnoremap <leader>v :!firefox -new-window % &<CR><CR>.
+au BufEnter,BufNew *.txt nnoremap <leader>v :!firefox -new-window %:r.html &<CR><CR>.
 
 "map <C-enter> :call Synctex()<cr>
 map <leader>z :execute "!zathura --synctex-forward " . line(".") . ":" . col(".") . ":" . bufname('%') . " " . expand("%:r") . ".pdf"<CR><CR>

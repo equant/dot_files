@@ -236,6 +236,8 @@ bindsym $mod+backslash exec terminator -T Scratch
 for_window [class= "Terminator" title="^Worklog"] floating toggle
 bindsym $mod+Shift+backslash exec terminator -T Worklog -x /usr/bin/vim + /home/equant/research/WORKLOG.md
 
+bindsym $mod+t exec terminator -T ToDo -x /usr/bin/vim + /home/equant/todo.txt
+
 
 # kill focused window
 bindsym $mod+Shift+q kill
