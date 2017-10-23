@@ -57,7 +57,8 @@ set tags=tags,../tags,../../tags
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          External Compiler Commands                          "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au BufEnter,BufNew *.tex nnoremap <leader>c :w<CR>:!rubber --synctex --pdf --unsafe %<CR>
+"au BufEnter,BufNew *.tex nnoremap <leader>c :w<CR>:!rubber --synctex --pdf --unsafe %<CR>
+au BufEnter,BufNew *.tex nnoremap <leader>c :w<CR>:!xelatex --synctex=1 %<CR>
 au BufEnter,BufNew *.py   nnoremap <leader>c :w<CR>:!python %<CR>
 au BufEnter,BufNew *.mkd nnoremap <leader>c :w<CR>:!pandoc % > %:r.html<CR>
 
