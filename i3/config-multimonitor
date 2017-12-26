@@ -43,7 +43,7 @@ bindsym $mod+p exec zathura /home/equant/research/tcha/reports/publications/lett
 
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
-#bindsym $mod+a workspace back_and_forth
+bindsym $mod+a workspace back_and_forth
 
 # move between workspaces
 bindsym $mod+Control+Right workspace next
@@ -63,81 +63,81 @@ bindsym $mod+Shift+l move right
 
 font pango: Monospace 8
 
-workspace F11 output HDMI1
-workspace F12 output HDMI2
-workspace F13 output VGA1
-workspace F21 output HDMI1
-workspace F22 output HDMI2
-workspace F23 output VGA1
-workspace F31 output HDMI1
-workspace F32 output HDMI2
-workspace F33 output VGA1
-workspace F41 output HDMI1
-workspace F42 output HDMI2
-workspace F43 output VGA1
-workspace F51 output HDMI1
-workspace F52 output HDMI2
-workspace F53 output VGA1
-workspace F61 output HDMI1
-workspace F62 output HDMI2
-workspace F63 output VGA1
-workspace F71 output HDMI1
-workspace F72 output HDMI2
-workspace F73 output VGA1
-workspace F81 output HDMI1
-workspace F82 output HDMI2
-workspace F83 output VGA1
-workspace F91 output HDMI1
-workspace F92 output HDMI2
-workspace F93 output VGA1
-workspace F101 output HDMI1
-workspace F102 output HDMI2
-workspace F103 output VGA1
-workspace F111 output HDMI1
-workspace F112 output HDMI2
-workspace F113 output VGA1
-workspace F121 output HDMI1
-workspace F122 output HDMI2
-workspace F123 output VGA1
+workspace F11 output HDMI-1
+workspace F12 output HDMI-2
+workspace F13 output VGA-1
+workspace F21 output HDMI-1
+workspace F22 output HDMI-2
+workspace F23 output VGA-1
+workspace F31 output HDMI-1
+workspace F32 output HDMI-2
+workspace F33 output VGA-1
+workspace F41 output HDMI-1
+workspace F42 output HDMI-2
+workspace F43 output VGA-1
+workspace F51 output HDMI-1
+workspace F52 output HDMI-2
+workspace F53 output VGA-1
+workspace F61 output HDMI-1
+workspace F62 output HDMI-2
+workspace F63 output VGA-1
+workspace F71 output HDMI-1
+workspace F72 output HDMI-2
+workspace F73 output VGA-1
+workspace F81 output HDMI-1
+workspace F82 output HDMI-2
+workspace F83 output VGA-1
+workspace F91 output HDMI-1
+workspace F92 output HDMI-2
+workspace F93 output VGA-1
+workspace F101 output HDMI-1
+workspace F102 output HDMI-2
+workspace F103 output VGA-1
+workspace F111 output HDMI-1
+workspace F112 output HDMI-2
+workspace F113 output VGA-1
+workspace F121 output HDMI-1
+workspace F122 output HDMI-2
+workspace F123 output VGA-1
 
-workspace B11 output HDMI1
-workspace B12 output HDMI2
-workspace B13 output VGA1
-workspace B21 output HDMI1
-workspace B22 output HDMI2
-workspace B23 output VGA1
-workspace B31 output HDMI1
-workspace B32 output HDMI2
-workspace B33 output VGA1
-workspace B41 output HDMI1
-workspace B42 output HDMI2
-workspace B43 output VGA1
-workspace B51 output HDMI1
-workspace B52 output HDMI2
-workspace B53 output VGA1
-workspace B61 output HDMI1
-workspace B62 output HDMI2
-workspace B63 output VGA1
-workspace B71 output HDMI1
-workspace B72 output HDMI2
-workspace B73 output VGA1
-workspace B81 output HDMI1
-workspace B82 output HDMI2
-workspace B83 output VGA1
-workspace B91 output HDMI1
-workspace B92 output HDMI2
-workspace B93 output VGA1
-workspace B101 output HDMI1
-workspace B102 output HDMI2
-workspace B103 output VGA1
-workspace B111 output HDMI1
-workspace B112 output HDMI2
-workspace B113 output VGA1
-workspace B121 output HDMI1
-workspace B122 output HDMI2
-workspace B123 output VGA1
+workspace B11 output HDMI-1
+workspace B12 output HDMI-2
+workspace B13 output VGA-1
+workspace B21 output HDMI-1
+workspace B22 output HDMI-2
+workspace B23 output VGA-1
+workspace B31 output HDMI-1
+workspace B32 output HDMI-2
+workspace B33 output VGA-1
+workspace B41 output HDMI-1
+workspace B42 output HDMI-2
+workspace B43 output VGA-1
+workspace B51 output HDMI-1
+workspace B52 output HDMI-2
+workspace B53 output VGA-1
+workspace B61 output HDMI-1
+workspace B62 output HDMI-2
+workspace B63 output VGA-1
+workspace B71 output HDMI-1
+workspace B72 output HDMI-2
+workspace B73 output VGA-1
+workspace B81 output HDMI-1
+workspace B82 output HDMI-2
+workspace B83 output VGA-1
+workspace B91 output HDMI-1
+workspace B92 output HDMI-2
+workspace B93 output VGA-1
+workspace B101 output HDMI-1
+workspace B102 output HDMI-2
+workspace B103 output VGA-1
+workspace B111 output HDMI-1
+workspace B112 output HDMI-2
+workspace B113 output VGA-1
+workspace B121 output HDMI-1
+workspace B122 output HDMI-2
+workspace B123 output VGA-1
 
-workspace_auto_back_and_forth yes
+#workspace_auto_back_and_forth yes
 
 bindsym $mod+F1 workspace F11; workspace F12; workspace F13
 bindsym $mod+F2 workspace F21; workspace F22; workspace F23
@@ -295,7 +295,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child

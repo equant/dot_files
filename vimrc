@@ -70,7 +70,7 @@ au BufEnter,BufNew *.mkd nnoremap <leader>c :w<CR>:!pandoc % > %:r.html<CR>
 "       --self-contained \
 "       --smart
 
-au BufEnter,BufNew *.md nnoremap <leader>c :w<CR>:!pandoc % --output=%:r.html --to=html5 --css=$HOME/.local/share/markdown-css/github.css --highlight-style=haddock --self-contained --smart <CR>:!pandoc -s % -o %:r.pdf --self-contained --smart --latex-engine=xelatex --variable mainfont="DejaVu Sans"<CR>
+au BufEnter,BufNew *.md nnoremap <leader>c :w<CR>:!pandoc % --output=%:r.html --to=html5 --css=$HOME/.local/share/markdown-css/github.css --highlight-style=haddock --self-contained -smart <CR>:!pandoc -s % -o %:r.pdf --self-contained -smart --pdf-engine=xelatex --variable mainfont="DejaVu Sans"<CR>
 
 " Old restructuredtext compile command that uses pandoc to create html.
 "au BufEnter,BufNew *.txt nnoremap <leader>c :w<CR>:!pandoc -s --from rst --toc % -o %:r.html --to=html5 --css=$HOME/.local/share/markdown-css/github.css --highlight-style=haddock --self-contained --smart <CR>:!pandoc --from rst --toc % -o %:r.pdf --latex-engine=xelatex --highlight-style=haddock --self-contained --smart --variable mainfont="DejaVu Sans"<CR>
@@ -160,3 +160,21 @@ function! Synctex()
     "execute "silent !zathura --synctex-forward " . line('.') . ":" . col('.') . ":" . bufname('%') . " " . g:syncpdf
 endfunction
 
+"" virtual tabstops using spaces
+"let my_tab=4
+"execute "set shiftwidth=".my_tab
+"execute "set softtabstop=".my_tab
+"set expandtab
+"" allow toggling between local and default mode
+"function! TabToggle()
+"  if &expandtab
+"    set shiftwidth=8
+"    set softtabstop=0
+"    set noexpandtab
+"  else
+"    execute "set shiftwidth=".g:my_tab
+"    execute "set softtabstop=".g:my_tab
+"    set expandtab
+"  endif
+"endfunction
+"nmap <F8> mz:execute TabToggle()<CR>'z
