@@ -1,8 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/equant/.config/i3'
-let g:netrw_dirhist_2='/home/equant/research/disk-snowlines/src/sandbox/luhman_luminosities'
-let g:netrw_dirhist_3='/home/equant/research/tcha/data/processed'
-let g:netrw_dirhist_4='/home/equant/projects/nodemcu_tools'
-let g:netrw_dirhist_5='/home/equant/augusta'
-let g:netrw_dirhist_6='/home/equant/projects/arduino_roku_remote/pronto_test/arduino-infrared-pronto'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/home/equant/research/radial_profile_modeler'
+let g:netrw_dirhist_2='/home/equant/git/dot_files'
