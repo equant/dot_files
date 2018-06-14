@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/equant/research/radial_profile_modeler'
-let g:netrw_dirhist_2='/home/equant/git/dot_files'
-let g:netrw_dirhist_3='/home/equant/research/rdust/src/data'
