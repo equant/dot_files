@@ -95,7 +95,7 @@ au BufEnter,BufNew *.py   nnoremap <leader>v :!zathura plot_working.pdf &<CR><CR
 "au BufEnter,BufNew *.mkd nnoremap <leader>v :!chromium --user-data-dir=/home/equant/.config/chromium/vim_profile %:r.html &<CR><CR>
 au BufEnter,BufNew *.mkd nnoremap <leader>v :!chromium --user-data-dir=/home/equant/.config/chromium/vim_profile --app=%:r.html &<CR><CR>
 " I am using the firefox add-on "Markdown Viewer by Thiht to make the following work:
-au BufEnter,BufNew *.md nnoremap <leader>v :!firefox -new-window % &<CR><CR>
+au BufEnter,BufNew *.md nnoremap <leader>v :!firefox -new-window %:r.html &<CR><CR>
 au BufEnter,BufNew *.txt nnoremap <leader>v :!firefox -new-window %:r.html &<CR><CR>
 au BufEnter,BufNew *.txt nnoremap <leader>V :!zathura %:r.pdf &<CR><CR>
 
@@ -109,10 +109,11 @@ au BufReadCmd *.pdf silent !/usr/bin/zathura % &
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                Worklog Tools                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-iab xdate <c-r>=strftime('%c')<cr>
+"iab xdate <c-r>=strftime('%c')<cr>
+iab xdate <c-r>=strftime('%a %b %d %Y')<cr>
 "nmap <leader>w i## TITLE<esc>:r!pwd<CR>I## xdate<esc>$o<CR>1.<esc>?TITLE<CR>
 "nmap <leader>w i## WorklogEntry<CR>#### xdate<esc>$o<CR>1.<esc>?WorklogEntry<CR>cw
-nmap <leader>w o<CR>===============================<CR>xdate<CR>===============================<CR><CR>
+nmap <leader>w o<CR>xdate<CR>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<CR><CR>
 
 
 "Tim's original...

@@ -13,6 +13,7 @@ export PATH=$PATH:~/projects/luatool/luatool
 export PATH=$PATH:~/research/tcha/src/modeling
 export PATH=$PATH:~/research/tcha/src/visualization
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/lib
+export LD_LIBRARY_PATH=$HOME/bin/MultiNest/lib:$LD_LIBRARY_PATH
 
 alias ls='ls --color=auto'
 
@@ -24,6 +25,7 @@ alias bb='. ~/.bashrc'
 alias rmtex='rm *.bbl *.aux msNotes.bib *.synctex.gz *.blg *.log'
 
 alias mycasa='casa --nologger --log2term'
+alias conda='/home/equant/bin/miniconda3/bin/conda'
 
 #alias fn='firefox -new-window % &
 
