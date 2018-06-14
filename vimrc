@@ -70,7 +70,8 @@ au BufEnter,BufNew *.mkd nnoremap <leader>c :w<CR>:!pandoc % > %:r.html<CR>
 "       --self-contained \
 "       --smart
 
-au BufEnter,BufNew *.md nnoremap <leader>c :w<CR>:!pandoc % --output=%:r.html --to=html5 --css=$HOME/.local/share/markdown-css/github.css --highlight-style=haddock --self-contained -smart <CR>:!pandoc -s % -o %:r.pdf --self-contained -smart --pdf-engine=xelatex --variable mainfont="DejaVu Sans"<CR>
+au BufEnter,BufNew *.md nnoremap <leader>c :w<CR>:!pandoc % --output=%:r.html --to=html5 --css=$HOME/.local/share/markdown-css/github.css --highlight-style=haddock --self-contained -smart <CR>:!pandoc -s % -o %:r.pdf --self-contained -smart --variable mainfont="DejaVu Sans"<CR>
+" au BufEnter,BufNew *.md nnoremap <leader>c :w<CR>:!pandoc % --output=%:r.html --to=html5 --css=$HOME/.local/share/markdown-css/github.css --highlight-style=haddock --self-contained -smart <CR>:!pandoc -s % -o %:r.pdf --self-contained -smart --pdf-engine=xelatex --variable mainfont="DejaVu Sans"<CR>
 
 " Old restructuredtext compile command that uses pandoc to create html.
 "au BufEnter,BufNew *.txt nnoremap <leader>c :w<CR>:!pandoc -s --from rst --toc % -o %:r.html --to=html5 --css=$HOME/.local/share/markdown-css/github.css --highlight-style=haddock --self-contained --smart <CR>:!pandoc --from rst --toc % -o %:r.pdf --latex-engine=xelatex --highlight-style=haddock --self-contained --smart --variable mainfont="DejaVu Sans"<CR>
@@ -80,7 +81,9 @@ au BufEnter,BufNew *.md nnoremap <leader>c :w<CR>:!pandoc % --output=%:r.html --
 " I made this switch because I was having trouble getting my pandoc to use
 " MathJax.
 " rst2html5 --stylesheet-path=/home/equant/.local/share/markdown-css/nathan.css --math-output=MathJax foo.txt foo.html
-au BufEnter,BufNew *.txt nnoremap <leader>c :w<CR>:!rst2html5 --stylesheet-path=$HOME/.local/share/markdown-css/nathan.css --math-output=MathJax % %:r.html<CR>:!rst2xetex % %:r.tex<CR>:!rubber --synctex --pdf --unsafe %:r.tex<CR>
+"au BufEnter,BufNew *.txt nnoremap <leader>c :w<CR>:!rst2html5 --stylesheet-path=$HOME/.local/share/markdown-css/nathan.css --math-output=MathJax % %:r.html<CR>
+au BufEnter,BufNew *.txt nnoremap <leader>c :w<CR>:!rst2html5 --stylesheet-path=$HOME/.local/share/markdown-css/nathan.css --math-output=MathJax % %:r.html<CR>:!rst2latex % %:r.tex<CR>:!rubber --synctex --pdf --unsafe %:r.tex<CR>
+
 "au BufEnter,BufNew *.txt nnoremap <leader>c :w<CR>:!rst2html5 --stylesheet-path=$HOME/.local/share/markdown-css/nathan.css --math-output=MathJax % %:r.html<CR>:!rst2xetex % %:r.tex<CR>:!rubber --synctex --pdf --unsafe %:r.tex<CR>
 "pandoc --from rst --toc % -o %:r.pdf --latex-engine=xelatex --highlight-style=haddock --self-contained --smart --variable mainfont="DejaVu Sans"<CR>
 
