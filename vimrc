@@ -8,7 +8,10 @@ filetype plugin indent on    " required
 execute pathogen#infect()
 
 map <Space> <Leader>
+"set background=light
+"colorscheme solarized
 "colorscheme badwolf
+colorscheme molokai
 syntax enable
 set tabstop=4
 set shiftwidth=4
