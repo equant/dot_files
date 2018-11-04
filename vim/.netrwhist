@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/equant/research/common_python_libs/nph/astro/acidic/literature'
+let g:netrw_dirhist_2='/home/equant/research/rdust/src/data'
+let g:netrw_dirhist_3='/home/equant/research/rdust/src/data/chaI'
+let g:netrw_dirhist_4='/home/equant/research/rdust/src/data'
