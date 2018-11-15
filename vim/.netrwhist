@@ -1,6 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/equant/research/common_python_libs/nph/astro/acidic/literature'
 let g:netrw_dirhist_2='/home/equant/research/rdust/src/data'
 let g:netrw_dirhist_3='/home/equant/research/rdust/src/data/chaI'
 let g:netrw_dirhist_4='/home/equant/research/rdust/src/data'
+let g:netrw_dirhist_5='/home/equant/classes/PTYS595B-Comet_Observing/project/src/old'
+let g:netrw_dirhist_6='/home/equant/classes/lsstdsfp/LSSTC-DSFP-Sessions/Session7/Day1/test_package'
+let g:netrw_dirhist_7='/home/equant/classes/lsstdsfp/LSSTC-DSFP-Sessions/Session7/Day1'
+let g:netrw_dirhist_8='/home/equant/classes/lsstdsfp/vimwiki_lsst'
+let g:netrw_dirhist_9='/home/equant/classes/lsstdsfp/LSSTC-DSFP-Sessions/Session7/Day1/test-repo/foo'
