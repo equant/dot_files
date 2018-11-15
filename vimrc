@@ -103,7 +103,7 @@ au BufReadCmd *.pdf silent !/usr/bin/zathura % &
 iab xdate <c-r>=strftime('%a %b %d %Y')<cr>
 "nmap <leader>w i## TITLE<esc>:r!pwd<CR>I## xdate<esc>$o<CR>1.<esc>?TITLE<CR>
 "nmap <leader>w i## WorklogEntry<CR>#### xdate<esc>$o<CR>1.<esc>?WorklogEntry<CR>cw
-nmap <leader>w o<CR>xdate<CR>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<CR><CR>
+"nmap <leader>w o<CR>xdate<CR>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<CR><CR>
 
 
 "Tim's original...
@@ -154,6 +154,28 @@ function! Synctex()
     execute "!zathura --synctex-forward " . line('.') . ":" . col('.') . ":" . bufname('%') . " " . g:syncpdf
     "execute "silent !zathura --synctex-forward " . line('.') . ":" . col('.') . ":" . bufname('%') . " " . g:syncpdf
 endfunction
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"                    vimwiki                     "
+""""""""""""""""""""""""""""""""""""""""""""""""""
+let wiki_1 = {}
+let wiki_1.path = '~/vimwiki_personal/'
+let wiki_1.syntax = 'markdown'
+let wiki_1.ext = '.md'
+
+let wiki_2 = {}
+let wiki_2.path = '~/vimwiki_work/'
+let wiki_2.syntax = 'markdown'
+let wiki_2.ext = '.md'
+
+let wiki_lsst = {}
+let wiki_lsst.path = '~/classes/lsstdsfp/vimwiki_lsst/'
+let wiki_lsst.syntax = 'markdown'
+let wiki_lsst.ext = '.md'
+
+let g:vimwiki_list = [wiki_1, wiki_2, wiki_lsst]
+let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 
 "" virtual tabstops using spaces
 "let my_tab=4

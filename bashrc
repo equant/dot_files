@@ -25,7 +25,7 @@ alias bb='. ~/.bashrc'
 alias rmtex='rm *.bbl *.aux msNotes.bib *.synctex.gz *.blg *.log'
 
 alias mycasa='casa --nologger --log2term'
-alias conda='/home/equant/bin/miniconda3/bin/conda'
+#alias conda='/home/equant/bin/miniconda3/bin/conda'
 
 #alias fn='firefox -new-window % &
 
@@ -138,3 +138,6 @@ fi
 
 # added by Miniconda3 4.3.21 installer
 #export PATH="/home/equant/bin/miniconda3/bin:$PATH"
+
+# added by Miniconda3 installer
+export PATH="/home/equant/miniconda3/bin:$PATH"
