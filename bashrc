@@ -12,8 +12,13 @@ export PATH=$PATH:~/bin/:~/bin/my_bash_tools:~/bin/casa/bin
 export PATH=$PATH:~/projects/luatool/luatool
 export PATH=$PATH:~/research/tcha/src/modeling
 export PATH=$PATH:~/research/tcha/src/visualization
+export PATH=$PATH:/home/equant/bin/radmc-3d/version_0.41/src/radmc3d
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/lib
 export LD_LIBRARY_PATH=$HOME/bin/MultiNest/lib:$LD_LIBRARY_PATH
+
+# IDL Stuff...
+export IDL_PATH=/home/equant/bin/idl
+export PYTHONPATH=/home/equant/bin/python/
 
 alias ls='ls --color=auto'
 
