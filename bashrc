@@ -8,10 +8,10 @@ export EDITOR=/usr/bin/vim
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export PATH=$PATH:~/bin/:~/bin/my_bash_tools:~/bin/casa/bin
+export PATH=$PATH:~/bin/:~/bin/my_bash_tools:~/bin/casa/bin:~/.local/bin
 export PATH=$PATH:~/projects/luatool/luatool
-export PATH=$PATH:~/research/tcha/src/modeling
-export PATH=$PATH:~/research/tcha/src/visualization
+#export PATH=$PATH:~/research/tcha/src/modeling
+#export PATH=$PATH:~/research/tcha/src/visualization
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/lib
 export LD_LIBRARY_PATH=$HOME/bin/MultiNest/lib:$LD_LIBRARY_PATH
 
