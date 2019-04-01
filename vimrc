@@ -34,21 +34,21 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map = { 'passive_filetypes': ['tex'] }
 
-augroup pencil
-  autocmd!
-  autocmd FileType markdown,mkd call pencil#init({'wrap': 'soft'})
-  autocmd FileType text         call pencil#init({'wrap': 'soft'})
-augroup END
+"augroup pencil
+"  autocmd!
+"  autocmd FileType markdown,mkd call pencil#init({'wrap': 'soft'})
+"  autocmd FileType text         call pencil#init({'wrap': 'soft'})
+"augroup END
 
 "set iskeyword+=:        " For latex tab completion (e.g. plot:radial_intensity)
 
-au FileType markdown,text,tex DittoOn  " Turn on Ditto's autocmds
-nmap =d <Plug>DittoNext                " Jump to the next word
-nmap -d <Plug>DittoPrev                " Jump to the previous word
-nmap +d <Plug>DittoGood                " Ignore the word under the cursor
-nmap _d <Plug>DittoBad                 " Stop ignoring the word under the cursor
-nmap ]d <Plug>DittoMore                " Show the next matches
-nmap [d <Plug>DittoLess                " Show the previous matches
+"au FileType markdown,text,tex DittoOn  " Turn on Ditto's autocmds
+"nmap =d <Plug>DittoNext                " Jump to the next word
+"nmap -d <Plug>DittoPrev                " Jump to the previous word
+"nmap +d <Plug>DittoGood                " Ignore the word under the cursor
+"nmap _d <Plug>DittoBad                 " Stop ignoring the word under the cursor
+"nmap ]d <Plug>DittoMore                " Show the next matches
+"nmap [d <Plug>DittoLess                " Show the previous matches
 
 " For tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -174,22 +174,47 @@ endfunction
 "                    vimwiki                     "
 """"""""""""""""""""""""""""""""""""""""""""""""""
 let wiki_personal = {}
-let wiki_personal.path = '~/vimwiki_personal/'
+let wiki_personal.path = '~/vimwiki/'
 let wiki_personal.syntax = 'markdown'
 let wiki_personal.ext = '.md'
+"let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.wiki'}]
 
-let wiki_lsst = {}
-let wiki_lsst.path = '~/classes/lsstdsfp/vimwiki_lsst/'
-let wiki_lsst.syntax = 'markdown'
-let wiki_lsst.ext = '.md'
+"let wiki_lsst = {}
+"let wiki_lsst.path = '~/classes/lsstdsfp/vimwiki_lsst/'
+"let wiki_lsst.syntax = 'markdown'
+"let wiki_lsst.ext = '.md'
 
-let wiki_evo = {}
-let wiki_evo.path = '~/classes/PTYS595B-Evo_of_Terr_Planets/'
-let wiki_evo.syntax = 'markdown'
-let wiki_evo.ext = '.md'
+"let wiki_evo = {}
+"let wiki_evo.path = '~/classes/PTYS595B-Evo_of_Terr_Planets/'
+"let wiki_evo.syntax = 'markdown'
+"let wiki_evo.ext = '.md'
 
-let g:vimwiki_list = [wiki_personal, wiki_lsst, wiki_evo]
-let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+let g:vimwiki_list = [wiki_personal]
+"let g:vimwiki_list = [wiki_personal, wiki_lsst, wiki_evo]
+"let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"              vimwiki / gollum                  "
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" From: https://dmoerner.wordpress.com/2017/08/14/vimwiki-and-git-autocommit/
+"augroup vimwiki
+    "au! BufWritePost ~/vimwiki/* !git add "%";git commit -m "Auto commit of %:t." "%"
+"augroup END
+
+:cd %:p:h
+"silent! !git pull > /dev/null
+:e!
+"autocmd! BufWritePost * silent! !git add .;git commit -m "vim autocommit" > /dev/null; git push > /dev/null&
+autocmd! BufWritePost ~/vimwiki/* silent! !git add .;git commit -m "vim autocommit" > /dev/null 
+
+"let g:vimwiki_list = [
+            "\ {'path': '~/foowiki/Work/', 'path_html': '~/public_html/vimwiki/Work', 'syntax': 'markdown', 'ext': '.md'},
+            "\ {'path': '~/foowiki/Personal/', 'path_html': '~/public_html/vimwiki/Personal', 'syntax': 'markdown', 'ext': '.md'},
+            "\ ]
+
+"let g:vimwiki_folding='list'
 
 "" virtual tabstops using spaces
 "let my_tab=4
