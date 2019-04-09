@@ -8,6 +8,11 @@ filetype plugin indent on    " required
 execute pathogen#infect()
 
 map <Space> <Leader>
+
+map <leader>s :SyntasticToggleMode<CR>
+map <leader>S :SyntasticToggleMode<CR>
+map <leader>a :SyntasticToggleMode<CR>
+
 "set background=light
 "colorscheme solarized
 "colorscheme badwolf
@@ -59,17 +64,17 @@ nmap <F8> :TagbarToggle<CR>
 " Indent entire file.
 nnoremap @I :normal gg=G''<CR>
 " Open Thunar where I am...
-nnoremap <leader>t :! thunar &<CR><CR>.
+nnoremap <leader>f :! thunar &<CR><CR>.
 set tags=tags,../tags,../../tags
 "set tags=~/research/disk-snowlines/tags;        " ctags -R .
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          External Compiler Commands                          "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"au BufEnter,BufNew *.tex nnoremap <leader>c :w<CR>:!rubber --synctex --pdf --unsafe %<CR>
-au BufEnter,BufNew *.tex nnoremap <leader>c :w<CR>:!xelatex --synctex=1 %<CR>
-au BufEnter,BufNew *.py   nnoremap <leader>c :w<CR>:!python %<CR>
-au BufEnter,BufNew *.mkd nnoremap <leader>c :w<CR>:!pandoc % > %:r.html<CR>
+"au BufEnter,BufNew *.tex nnoremap <leader>c :w<CR>:!xelatex --synctex=1 %<CR>
+"au BufEnter,BufNew *.py   nnoremap <leader>c :w<CR>:!python %<CR>
+"au BufEnter,BufNew *.mkd nnoremap <leader>c :w<CR>:!pandoc % > %:r.html<CR>
+au BufEnter,BufNew *.md nnoremap <leader>c :w<CR>:!pandoc % -o %:r.pdf<CR>
 
 "pandoc foo.md \
 "       --output=foo.html \
@@ -82,12 +87,13 @@ au BufEnter,BufNew *.mkd nnoremap <leader>c :w<CR>:!pandoc % > %:r.html<CR>
 " compile HTML _and_ pdf...
 "au BufEnter,BufNew *.md nnoremap <leader>c :w<CR>:!pandoc % --output=%:r.html --to=html5 --css=$HOME/.local/share/markdown-css/github.css --highlight-style=haddock --self-contained -smart <CR>:!pandoc -s % -o %:r.pdf --self-contained -smart --variable mainfont="DejaVu Sans"<CR>
 " Compile just html...
-au BufEnter,BufNew *.md nnoremap <leader>c :w<CR>:!pandoc % --output=%:r.html --to=html5 --css=$HOME/.local/share/markdown-css/github.css --highlight-style=haddock --self-contained -smart <CR>
-" Compile just pdf...
-au BufEnter,BufNew *.md nnoremap <leader>C :w<CR>:!pandoc -s % -o %:r.pdf --self-contained -smart --variable mainfont="DejaVu Sans"<CR>
+"au BufEnter,BufNew *.md nnoremap <leader>c :w<CR>:!pandoc % --output=%:r.html --to=html5 --css=$HOME/.local/share/markdown-css/github.css --highlight-style=haddock --self-contained -smart <CR>
+"" Compile just pdf...
+"au BufEnter,BufNew *.md nnoremap <leader>C :w<CR>:!pandoc -s % -o %:r.pdf --self-contained -smart --variable mainfont="DejaVu Sans"<CR>
+"au BufEnter,BufNew *.md nnoremap <leader>c :!pandoc -s % -o %:r.pdf<CR>
 
 
-au BufEnter,BufNew *.txt nnoremap <leader>c :w<CR>:!rst2html5 --stylesheet-path=$HOME/.local/share/markdown-css/nathan.css --math-output=MathJax % %:r.html<CR>:!rst2latex % %:r.tex<CR>:!rubber --synctex --pdf --unsafe %:r.tex<CR>
+"au BufEnter,BufNew *.txt nnoremap <leader>c :w<CR>:!rst2html5 --stylesheet-path=$HOME/.local/share/markdown-css/nathan.css --math-output=MathJax % %:r.html<CR>:!rst2latex % %:r.tex<CR>:!rubber --synctex --pdf --unsafe %:r.tex<CR>
 
 "au BufEnter,BufNew *.txt nnoremap <leader>c :w<CR>:!rst2html5 --stylesheet-path=$HOME/.local/share/markdown-css/nathan.css --math-output=MathJax % %:r.html<CR>:!rst2xetex % %:r.tex<CR>:!rubber --synctex --pdf --unsafe %:r.tex<CR>
 "pandoc --from rst --toc % -o %:r.pdf --latex-engine=xelatex --highlight-style=haddock --self-contained --smart --variable mainfont="DejaVu Sans"<CR>
@@ -98,11 +104,11 @@ au BufEnter,BufNew *.txt nnoremap <leader>c :w<CR>:!rst2html5 --stylesheet-path=
 au BufEnter,BufNew *.tex nnoremap <leader>v :!zathura %:r.pdf &<CR><CR>
 au BufEnter,BufNew *.py   nnoremap <leader>v :!zathura plot_working.pdf &<CR><CR>
 "au BufEnter,BufNew *.mkd nnoremap <leader>v :!chromium --user-data-dir=/home/equant/.config/chromium/vim_profile %:r.html &<CR><CR>
-au BufEnter,BufNew *.mkd nnoremap <leader>v :!chromium --user-data-dir=/home/equant/.config/chromium/vim_profile --app=%:r.html &<CR><CR>
+"au BufEnter,BufNew *.mkd nnoremap <leader>v :!chromium --user-data-dir=/home/equant/.config/chromium/vim_profile --app=%:r.html &<CR><CR>
 " I am using the firefox add-on "Markdown Viewer by Thiht to make the following work:
-au BufEnter,BufNew *.md nnoremap <leader>v :!firefox -new-window %:r.html &<CR><CR>
-au BufEnter,BufNew *.txt nnoremap <leader>v :!firefox -new-window %:r.html &<CR><CR>
-au BufEnter,BufNew *.txt nnoremap <leader>V :!zathura %:r.pdf &<CR><CR>
+"au BufEnter,BufNew *.md nnoremap <leader>v :!firefox -new-window %:r.html &<CR><CR>
+"au BufEnter,BufNew *.txt nnoremap <leader>v :!firefox -new-window %:r.html &<CR><CR>
+au BufEnter,BufNew *.md nnoremap <leader>v :!zathura %:r.pdf &<CR><CR>
 
 "map <C-enter> :call Synctex()<cr>
 map <leader>z :execute "!zathura --synctex-forward " . line(".") . ":" . col(".") . ":" . bufname('%') . " " . expand("%:r") . ".pdf"<CR><CR>
@@ -174,7 +180,7 @@ endfunction
 "                    vimwiki                     "
 """"""""""""""""""""""""""""""""""""""""""""""""""
 let wiki_personal = {}
-let wiki_personal.path = '~/vimwiki/'
+let wiki_personal.path = '/home/equant/vimwiki/'
 let wiki_personal.syntax = 'markdown'
 let wiki_personal.ext = '.md'
 "let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.wiki'}]
@@ -205,9 +211,9 @@ let g:vimwiki_list = [wiki_personal]
 
 :cd %:p:h
 "silent! !git pull > /dev/null
-:e!
+":e!
 "autocmd! BufWritePost * silent! !git add .;git commit -m "vim autocommit" > /dev/null; git push > /dev/null&
-autocmd! BufWritePost ~/vimwiki/* silent! !git add .;git commit -m "vim autocommit" > /dev/null 
+autocmd! BufWritePost /home/equant/vimwiki/* silent! !git add .;git commit -m "vim autocommit" > /dev/null 
 
 "let g:vimwiki_list = [
             "\ {'path': '~/foowiki/Work/', 'path_html': '~/public_html/vimwiki/Work', 'syntax': 'markdown', 'ext': '.md'},

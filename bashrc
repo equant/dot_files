@@ -13,6 +13,7 @@ export PATH=$PATH:~/projects/luatool/luatool
 export PATH=$PATH:~/research/tcha/src/modeling
 export PATH=$PATH:~/research/tcha/src/visualization
 export PATH=$PATH:/home/equant/bin/radmc-3d/version_0.41/src/radmc3d
+export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/lib
 export LD_LIBRARY_PATH=$HOME/bin/MultiNest/lib:$LD_LIBRARY_PATH
 
