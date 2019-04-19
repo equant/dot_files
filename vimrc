@@ -7,6 +7,14 @@ filetype plugin indent on    " required
 
 execute pathogen#infect()
 
+
+
+" MACROS
+" record the macro (into 'j' for example), and then open vimrc
+" and do "jp and then add the let @j bit...
+" Macro for converting image paths to markup images...
+let @i = '0$?.€kb/lv$y0i![pJr]a(A)j0'
+
 map <Space> <Leader>
 
 map <leader>s :SyntasticToggleMode<CR>
@@ -72,6 +80,7 @@ set tags=tags,../tags,../../tags
 "                          External Compiler Commands                          "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "au BufEnter,BufNew *.tex nnoremap <leader>c :w<CR>:!xelatex --synctex=1 %<CR>
+au BufEnter,BufNew *.tex nnoremap <leader>c :w<CR>:!rubber --pdf --synctex %<CR>
 "au BufEnter,BufNew *.py   nnoremap <leader>c :w<CR>:!python %<CR>
 "au BufEnter,BufNew *.mkd nnoremap <leader>c :w<CR>:!pandoc % > %:r.html<CR>
 au BufEnter,BufNew *.md nnoremap <leader>c :w<CR>:!pandoc % -o %:r.pdf<CR>
