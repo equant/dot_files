@@ -160,6 +160,9 @@ au BufEnter,BufNew .vimrc nnoremap <leader>b :center 50<cr>0r"<space><esc>40A <e
 " .in -> MCMax
 au BufEnter,BufNew .in nnoremap <leader>b :center 50<cr>0r*<space><esc>40A <esc>d50<bar>r*YppVr*kk.
 
+nnoremap <leader>l <esc>080i#<esc>
+nnoremap <leader>L O<esc>080i#<esc>jo<esc>80i#<esc>k
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     Old Things Left For Future Reference                     "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
