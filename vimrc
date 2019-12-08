@@ -7,7 +7,12 @@ filetype plugin indent on    " required
 
 execute pathogen#infect()
 
-
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"      https://github.com/neoclide/coc.nvim      "
+""""""""""""""""""""""""""""""""""""""""""""""""""
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " MACROS
 " record the macro (into 'j' for example), and then open vimrc
@@ -55,13 +60,13 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['tex'] }
 
 "set iskeyword+=:        " For latex tab completion (e.g. plot:radial_intensity)
 
-"au FileType markdown,text,tex DittoOn  " Turn on Ditto's autocmds
-"nmap =d <Plug>DittoNext                " Jump to the next word
-"nmap -d <Plug>DittoPrev                " Jump to the previous word
-"nmap +d <Plug>DittoGood                " Ignore the word under the cursor
-"nmap _d <Plug>DittoBad                 " Stop ignoring the word under the cursor
-"nmap ]d <Plug>DittoMore                " Show the next matches
-"nmap [d <Plug>DittoLess                " Show the previous matches
+au FileType markdown,text,tex DittoOn  " Turn on Ditto's autocmds
+nmap =d <Plug>DittoNext                " Jump to the next word
+nmap -d <Plug>DittoPrev                " Jump to the previous word
+nmap +d <Plug>DittoGood                " Ignore the word under the cursor
+nmap _d <Plug>DittoBad                 " Stop ignoring the word under the cursor
+nmap ]d <Plug>DittoMore                " Show the next matches
+nmap [d <Plug>DittoLess                " Show the previous matches
 
 " For tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -76,14 +81,17 @@ nnoremap <leader>f :! thunar &<CR><CR>.
 set tags=tags,../tags,../../tags
 "set tags=~/research/disk-snowlines/tags;        " ctags -R .
 
+"let g:markdown_fenced_languages = ['python']
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          External Compiler Commands                          "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "au BufEnter,BufNew *.tex nnoremap <leader>c :w<CR>:!xelatex --synctex=1 %<CR>
 au BufEnter,BufNew *.tex nnoremap <leader>c :w<CR>:!rubber --pdf --synctex %<CR>
 "au BufEnter,BufNew *.py   nnoremap <leader>c :w<CR>:!python %<CR>
-"au BufEnter,BufNew *.mkd nnoremap <leader>c :w<CR>:!pandoc % > %:r.html<CR>
-au BufEnter,BufNew *.md nnoremap <leader>c :w<CR>:!pandoc % -o %:r.pdf<CR>
+au BufEnter,BufNew *.txt nnoremap <leader>c :w<CR>:!pandoc % > %:r.html<CR>
+"au BufEnter,BufNew *.md nnoremap <leader>c :w<CR>:!pandoc % -o %:r.pdf<CR>
 
 "pandoc foo.md \
 "       --output=foo.html \
@@ -118,6 +126,9 @@ au BufEnter,BufNew *.py   nnoremap <leader>v :!zathura plot_working.pdf &<CR><CR
 "au BufEnter,BufNew *.md nnoremap <leader>v :!firefox -new-window %:r.html &<CR><CR>
 "au BufEnter,BufNew *.txt nnoremap <leader>v :!firefox -new-window %:r.html &<CR><CR>
 au BufEnter,BufNew *.md nnoremap <leader>v :!zathura %:r.pdf &<CR><CR>
+
+au BufEnter,BufNew *.txt nnoremap <leader>v :!chromium --user-data-dir=/home/equant/.config/chromium/vim_profile %:r.html &<CR><CR>
+au BufEnter,BufNew *.txt nnoremap <leader>V :!firefox -new-window %:r.html &<CR><CR>
 
 "map <C-enter> :call Synctex()<cr>
 map <leader>z :execute "!zathura --synctex-forward " . line(".") . ":" . col(".") . ":" . bufname('%') . " " . expand("%:r") . ".pdf"<CR><CR>
@@ -156,6 +167,7 @@ noremap <Leader><Leader> <C-^>
 nnoremap <leader>b :center 50<cr>0r#<space><esc>40A <esc>d50<bar>r#YppVr#kk.
 au BufEnter,BufNew *.tex nnoremap <leader>b :center 50<cr>0r%<space><esc>40A <esc>d50<bar>r%YppVr%kk.
 au BufEnter,BufNew *.py nnoremap <leader>b :center 50<cr>0r#<space><esc>40A <esc>d50<bar>r#YppVr#kk.
+au BufEnter,BufNew *.txt nnoremap <leader>b :center 50<cr>0r#<space><esc>40A <esc>d50<bar>r#YppVr#kk.
 au BufEnter,BufNew .vimrc nnoremap <leader>b :center 50<cr>0r"<space><esc>40A <esc>d50<bar>r"YppVr"kk.
 " .in -> MCMax
 au BufEnter,BufNew .in nnoremap <leader>b :center 50<cr>0r*<space><esc>40A <esc>d50<bar>r*YppVr*kk.

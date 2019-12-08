@@ -19,7 +19,8 @@ export LD_LIBRARY_PATH=$HOME/bin/MultiNest/lib:$LD_LIBRARY_PATH
 
 # IDL Stuff...
 export IDL_PATH=/usr/local/exelis/idl85/lib:/home/equant/bin/idl
-export PYTHONPATH=/home/equant/bin/python/
+#export PYTHONPATH=/home/equant/bin/python/
+export PYTHONPATH=$PYTHONPATH:/home/equant/research/common_python_libs
 
 alias ls='ls --color=auto'
 
