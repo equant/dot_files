@@ -1,5 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/equant/vimwiki_personal/diary'
-let g:netrw_dirhist_2='/home/equant/foo'
-let g:netrw_dirhist_3='/home/equant/research/rdust'
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/equant/projects/68k/macintosh_garden_bbs/RetroBridgeBBS/RetroBridgeBBS/rooms'
+let g:netrw_dirhist_1='/home/equant/projects/68k/macintosh_garden_bbs/RetroBridgeBBS/RetroBridgeBBS/rooms/archives/garden'
+let g:netrw_dirhist_0='/home/equant/projects/68k/macintosh_garden_bbs/RetroBridgeBBS/RetroBridgeBBS/rooms/archives'
+let g:netrw_dirhist_9='/home/equant/projects/68k/macintosh_garden_bbs/RetroBridgeBBS/RetroBridgeBBS/rooms/archives/garden'
+let g:netrw_dirhist_8='/home/equant/projects/68k/macintosh_garden_bbs/RetroBridgeBBS/RetroBridgeBBS/rooms/archives'
+let g:netrw_dirhist_7='/home/equant/projects/68k/macintosh_garden_bbs/RetroBridgeBBS/RetroBridgeBBS/rooms/archives/garden'
+let g:netrw_dirhist_6='/home/equant/projects/68k/macintosh_garden_bbs/RetroBridgeBBS/RetroBridgeBBS/rooms/archives'
+let g:netrw_dirhist_5='/home/equant/projects/68k/macintosh_garden_bbs/RetroBridgeBBS/RetroBridgeBBS/rooms/archives/garden'
+let g:netrw_dirhist_4='/home/equant/projects/68k/macintosh_garden_bbs/RetroBridgeBBS/RetroBridgeBBS/rooms/archives'
+let g:netrw_dirhist_3='/home/equant/projects/68k/macintosh_garden_bbs/RetroBridgeBBS/RetroBridgeBBS/rooms/archives/garden'
