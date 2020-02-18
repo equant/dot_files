@@ -78,7 +78,7 @@ nmap <F8> :TagbarToggle<CR>
 nnoremap @I :normal gg=G''<CR>
 " Open Thunar where I am...
 nnoremap <leader>f :! thunar &<CR><CR>.
-set tags=tags,../tags,../../tags
+set tags=tags,../tags,../../tags,../../../tags
 "set tags=~/research/disk-snowlines/tags;        " ctags -R .
 
 "let g:markdown_fenced_languages = ['python']
