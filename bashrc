@@ -2,25 +2,20 @@
 # ~/.bashrc
 #
 
+#
+# Add the following to the ~/.bashrc
+#
+# if [ -f ~/git/dot_files/bashrc ]; then
+#     . ~/git/dot_files/bashrc
+# fi
+
+
 export PAGER=/usr/bin/less
 export EDITOR=/usr/bin/vim
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export PATH=$PATH:~/bin/:~/bin/my_bash_tools:~/bin/casa/bin:~/.local/bin
-export PATH=$PATH:~/projects/luatool/luatool
-export PATH=$PATH:~/research/tcha/src/modeling
-export PATH=$PATH:~/research/tcha/src/visualization
-export PATH=$PATH:/home/equant/bin/radmc-3d/version_0.41/src/radmc3d
-export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/lib
-export LD_LIBRARY_PATH=$HOME/bin/MultiNest/lib:$LD_LIBRARY_PATH
-
-# IDL Stuff...
-export IDL_PATH=/usr/local/exelis/idl85/lib:/home/equant/bin/idl
-#export PYTHONPATH=/home/equant/bin/python/
-export PYTHONPATH=$PYTHONPATH:/home/equant/research/common_python_libs
 
 alias ls='ls --color=auto'
 
@@ -31,15 +26,6 @@ alias bb='. ~/.bashrc'
 
 alias rmtex='rm *.bbl *.aux msNotes.bib *.synctex.gz *.blg *.log'
 
-alias mycasa='casa --nologger --log2term'
-#alias conda='/home/equant/bin/miniconda3/bin/conda'
-
-#alias fn='firefox -new-window % &
-
-
-function fn {
-    firefox -new-window $1 &
-}
 
 function parse_git_branch() {
 	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
@@ -92,35 +78,10 @@ export PS1="\u\[\e[32m\]@\[\e[m\]\h:\[\e[34m\]\W\[\e[m\] \[\e[33m\]\`parse_git_b
 #alias bf='python ~/research/disk-snowlines/src/models/bayessianFoo.py'
 
 ################################################################################
-#                                GOTO Commands                                 #
-################################################################################
-#goto commands are now handled with mm/gg.
-#export ggsl=~/research/scattered_light_water_absorption
-#export ggnsf=~/research/funding/nsf/2016
-#export ggw=~/research/disk-snowlines
-
-alias pipe="cd ~/research/herschel/pythonScripts/pipeline"
-#alias ggnsf="cd $ggnsf"
-#alias ggsl="cd $ggsl"
-#alias ggw="cd $ggw"
-
-################################################################################
 #                                 Make Backups                                 #
 ################################################################################
 alias ddate='date +%Y%m%d'
 alias mkdb='mkdir -p backups/$(ddate); cp -p *.* backups/$(ddate)/; mv -p .*.sw* backups/$(ddate)'
-
-################################################################################
-#                               Binary Shortcuts                               #
-################################################################################
-alias cv='~/bin/casa-release-4.5.2-el6/casaviewer'
-
-##################################################
-#     Directory Bookmarks (vimish bindings)      #
-##################################################
-
-#alias mm='export mm=`pwd`'
-#alias gm='cd $mm'
 
 
 ################################################################################
@@ -133,18 +94,3 @@ fi
 if [ -f ~/git/my_bash_tools/mmgg.bash ]; then
     . ~/git/my_bash_tools/mmgg.bash
 fi
-
-
-################################################################################
-#                                  Dead Wood                                   #
-################################################################################
-#alias mkdb='mkdir -p backups/$(date +%Y%m%d)'
-#alias prop='cd /home/equant/research/alma/proposals/cycle-04/snow_line_vs_mass_accretion_rate'
-#alias mcprog='echo "Running..." ; ps aux | grep -i MCMaxLinux | wc -l; echo "Done..." ; ls -1 */done | wc -l'
-#alias ljup='cd ~ ; jupyter notebook --certfile=.jupyter/mycert.pem --keyfile .jupyter/mykey.key'
-
-# added by Miniconda3 4.3.21 installer
-#export PATH="/home/equant/bin/miniconda3/bin:$PATH"
-
-# added by Miniconda3 installer
-export PATH="/home/equant/miniconda3/bin:$PATH"

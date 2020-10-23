@@ -1,0 +1,7 @@
+# i3 Config Notes
+
+## Starting to use gnome-session-flashback on my Ubuntu work machine.
+
+```bash
+sudo apt-get install gnome-session-flashback
+```
