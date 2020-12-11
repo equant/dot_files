@@ -167,6 +167,7 @@ for_window [class= "Thunar"] floating enable
 #for_window [class= "Casalogger"] floating enable
 #for_window [title= "Subebox"] floating enable
 #for_window [title= "Subibox"] floating enable
+for_window [class= "Open3D"] floating enable
 
 #### END NATHAN ####
 

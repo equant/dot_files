@@ -5,7 +5,18 @@ filetype off
 set encoding=utf-8
 filetype plugin indent on    " required
 
-execute pathogen#infect()
+"execute pathogen#infect()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     Vundle                     "
+""""""""""""""""""""""""""""""""""""""""""""""""""
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+" add all your plugins here (note older versions of Vundle
+" used Bundle instead of Plugin)
+call vundle#end()
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "      https://github.com/neoclide/coc.nvim      "
@@ -60,13 +71,13 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['tex'] }
 
 "set iskeyword+=:        " For latex tab completion (e.g. plot:radial_intensity)
 
-au FileType markdown,text,tex DittoOn  " Turn on Ditto's autocmds
-nmap =d <Plug>DittoNext                " Jump to the next word
-nmap -d <Plug>DittoPrev                " Jump to the previous word
-nmap +d <Plug>DittoGood                " Ignore the word under the cursor
-nmap _d <Plug>DittoBad                 " Stop ignoring the word under the cursor
-nmap ]d <Plug>DittoMore                " Show the next matches
-nmap [d <Plug>DittoLess                " Show the previous matches
+"au FileType markdown,text,tex DittoOn  " Turn on Ditto's autocmds
+"nmap =d <Plug>DittoNext                " Jump to the next word
+"nmap -d <Plug>DittoPrev                " Jump to the previous word
+"nmap +d <Plug>DittoGood                " Ignore the word under the cursor
+"nmap _d <Plug>DittoBad                 " Stop ignoring the word under the cursor
+"nmap ]d <Plug>DittoMore                " Show the next matches
+"nmap [d <Plug>DittoLess                " Show the previous matches
 
 " For tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -198,6 +209,17 @@ function! Synctex()
     execute "!zathura --synctex-forward " . line('.') . ":" . col('.') . ":" . bufname('%') . " " . g:syncpdf
     "execute "silent !zathura --synctex-forward " . line('.') . ":" . col('.') . ":" . bufname('%') . " " . g:syncpdf
 endfunction
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"                    Markdown                    "
+"                    Folding                     "
+""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:markdown_folding=1
+let g:vimwiki_global_ext = 0
+highlight Folded term=standout ctermfg=14 ctermbg=0
+nnoremap <space> za
+vnoremap <space> za
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
