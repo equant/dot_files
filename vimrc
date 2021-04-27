@@ -5,25 +5,37 @@ filetype off
 set encoding=utf-8
 filetype plugin indent on    " required
 
-"execute pathogen#infect()
+execute pathogen#infect()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "                     Vundle                     "
 """"""""""""""""""""""""""""""""""""""""""""""""""
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
+"Plugin 'gmarik/Vundle.vim'
+Plugin 'preservim/tagbar'
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
+Plugin 'preservim/nerdtree'
 call vundle#end()
 
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"                 YouCompleteMe                  "
+""""""""""""""""""""""""""""""""""""""""""""""""""
+set completeopt-=preview
+let g:ycm_auto_hover=''
+"set previewpopup=height:10,width:60,highlight:PMenuSbar
+"set completeopt+=popup
+"set completepopup=height:15,width:60,border:off,highlight:PMenuSbar
+map K :YcmCompleter GetDoc<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "      https://github.com/neoclide/coc.nvim      "
 """"""""""""""""""""""""""""""""""""""""""""""""""
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+"inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+"inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " MACROS
 " record the macro (into 'j' for example), and then open vimrc
@@ -33,14 +45,15 @@ let @i = '0$?.€kb/lv$y0i![pJr]a(A)j0'
 
 map <Space> <Leader>
 
-map <leader>s :SyntasticToggleMode<CR>
-map <leader>S :SyntasticToggleMode<CR>
-map <leader>a :SyntasticToggleMode<CR>
+"map <leader>s :SyntasticToggleMode<CR>
+"map <leader>S :SyntasticToggleMode<CR>
+"map <leader>a :SyntasticToggleMode<CR>
 
 "set background=light
 "colorscheme solarized
 "colorscheme badwolf
-colorscheme molokai
+"colorscheme molokai
+colorscheme jellybeans
 syntax enable
 set tabstop=4
 set shiftwidth=4
@@ -54,14 +67,14 @@ let loaded_matchparen = 1  " fools vim into thinking that this module is already
 set autochdir
 
 """ Things recommended by Syntastic...
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = { 'passive_filetypes': ['tex'] }
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_mode_map = { 'passive_filetypes': ['tex'] }
 
 "augroup pencil
 "  autocmd!
@@ -118,7 +131,7 @@ au BufEnter,BufNew *.txt nnoremap <leader>c :w<CR>:!pandoc % > %:r.html<CR>
 "au BufEnter,BufNew *.md nnoremap <leader>c :w<CR>:!pandoc % --output=%:r.html --to=html5 --css=$HOME/.local/share/markdown-css/github.css --highlight-style=haddock --self-contained -smart <CR>
 "" Compile just pdf...
 "au BufEnter,BufNew *.md nnoremap <leader>C :w<CR>:!pandoc -s % -o %:r.pdf --self-contained -smart --variable mainfont="DejaVu Sans"<CR>
-"au BufEnter,BufNew *.md nnoremap <leader>c :!pandoc -s % -o %:r.pdf<CR>
+au BufEnter,BufNew *.md nnoremap <leader>c :!pandoc -s % -o %:r.pdf<CR>
 
 
 "au BufEnter,BufNew *.txt nnoremap <leader>c :w<CR>:!rst2html5 --stylesheet-path=$HOME/.local/share/markdown-css/nathan.css --math-output=MathJax % %:r.html<CR>:!rst2latex % %:r.tex<CR>:!rubber --synctex --pdf --unsafe %:r.tex<CR>
@@ -153,6 +166,7 @@ au BufReadCmd *.pdf silent !/usr/bin/zathura % &
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "iab xdate <c-r>=strftime('%c')<cr>
 iab xdate <c-r>=strftime('%a %b %d %Y')<cr>
+iab ddate <c-r>=strftime('%a %b %d %Y')<cr>
 "nmap <leader>w i## TITLE<esc>:r!pwd<CR>I## xdate<esc>$o<CR>1.<esc>?TITLE<CR>
 "nmap <leader>w i## WorklogEntry<CR>#### xdate<esc>$o<CR>1.<esc>?WorklogEntry<CR>cw
 "nmap <leader>w o<CR>xdate<CR>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<CR><CR>
@@ -210,6 +224,12 @@ function! Synctex()
     "execute "silent !zathura --synctex-forward " . line('.') . ":" . col('.') . ":" . bufname('%') . " " . g:syncpdf
 endfunction
 
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"                    Folding                     "
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set foldmethod=indent
+set foldlevel=99
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "                    Markdown                    "
@@ -218,8 +238,8 @@ endfunction
 let g:markdown_folding=1
 let g:vimwiki_global_ext = 0
 highlight Folded term=standout ctermfg=14 ctermbg=0
-nnoremap <space> za
-vnoremap <space> za
+"nnoremap <space> za
+"vnoremap <space> za
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -244,6 +264,12 @@ let wiki_personal.ext = '.md'
 let g:vimwiki_list = [wiki_personal]
 "let g:vimwiki_list = [wiki_personal, wiki_lsst, wiki_evo]
 "let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+
+"For gnome-terminal (DOESN'T WORK)
+"nnoremap <leader><left> <Plug>VimwikiDiaryPrevDay
+"nnoremap <leader><right> <Plug>VimwikiDiaryNextDay
+nnoremap <leader><left> :VimwikiDiaryPrevDay<CR>
+nnoremap <leader><right> :VimwikiDiaryNextDay<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""

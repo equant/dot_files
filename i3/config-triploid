@@ -4,7 +4,8 @@
 # Should you change your keyboard layout somewhen, delete
 # this file and re-run i3-config-wizard(1).
 #
-
+# i3-msg "rename workspace F21 to temporary; rename workspace F22 to F21; rename workspace temporary to F22"
+#
 #set $default_gaps_inner 1
 #set $default_gaps_outer 1
 #gaps inner 1
@@ -20,11 +21,21 @@ set $mod Mod1
 set $win Mod4
 #set $menu Menu
 
-
+bindsym $mod+1 exec "i3-msg 'rename workspace F11 to temporary; rename workspace F12 to F11; rename workspace temporary to F12; workspace F11; workspace F12'"
+bindsym $mod+2 exec "i3-msg 'rename workspace F21 to temporary; rename workspace F22 to F21; rename workspace temporary to F22; workspace F21; workspace F22'"
+bindsym $mod+3 exec "i3-msg 'rename workspace F31 to temporary; rename workspace F32 to F31; rename workspace temporary to F32; workspace F31; workspace F32'"
+bindsym $mod+4 exec "i3-msg 'rename workspace F41 to temporary; rename workspace F42 to F41; rename workspace temporary to F42; workspace F41; workspace F42'"
+bindsym $mod+5 exec "i3-msg 'rename workspace F51 to temporary; rename workspace F52 to F51; rename workspace temporary to F52; workspace F51; workspace F52'"
+bindsym $mod+6 exec "i3-msg 'rename workspace F61 to temporary; rename workspace F62 to F61; rename workspace temporary to F62; workspace F61; workspace F62'"
+bindsym $mod+7 exec "i3-msg 'rename workspace F71 to temporary; rename workspace F72 to F71; rename workspace temporary to F72; workspace F71; workspace F72'"
+bindsym $mod+8 exec "i3-msg 'rename workspace F81 to temporary; rename workspace F82 to F81; rename workspace temporary to F82; workspace F81; workspace F82'"
+#bindsym $mod+12 exec "i3-msg 'rename workspace F121 to temporary; rename workspace F122 to F121; rename workspace temporary to F122; workspace F121; workspace F122'"
 
 #### BEGIN NATHAN ####
 # calendar
 bindsym $mod+c exec gsimplecal
+bindsym $win+v exec pavucontrol
+bindsym $win+s exec xfce4-screenshooter
 
 #bindsym $mod+Shift+minus move scratchpad
 #bindsym $mod+minus scratchpad show
@@ -265,16 +276,16 @@ bindsym $mod+space focus mode_toggle
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace F11
-bindsym $mod+2 workspace F21
-bindsym $mod+3 workspace F31
-bindsym $mod+4 workspace F41
-bindsym $mod+5 workspace F51
-bindsym $mod+6 workspace F61
-bindsym $mod+7 workspace F71
-bindsym $mod+8 workspace F81
-bindsym $mod+9 workspace F91
-bindsym $mod+0 workspace F13        # exception to the rule!
+#bindsym $mod+1 workspace F11
+#bindsym $mod+2 workspace F21
+#bindsym $mod+3 workspace F31
+#bindsym $mod+4 workspace F41
+#bindsym $mod+5 workspace F51
+#bindsym $mod+6 workspace F61
+#bindsym $mod+7 workspace F71
+#bindsym $mod+8 workspace F81
+#bindsym $mod+9 workspace F91
+#bindsym $mod+0 workspace F13        # exception to the rule!
 
 # move focused container to workspace
 #bindsym $mod+Shift+1 move container to workspace 1
@@ -320,6 +331,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
