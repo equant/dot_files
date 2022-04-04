@@ -7,6 +7,12 @@ filetype plugin indent on    " required
 
 execute pathogen#infect()
 
+"set number "(optional - will help to visually verify that it's working)
+"set textwidth=0
+"set wrapmargin=0
+"set nowrap
+"set linebreak # (optional - breaks by word rather than character)
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "                     Vundle                     "
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -114,8 +120,9 @@ let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 "au BufEnter,BufNew *.tex nnoremap <leader>c :w<CR>:!xelatex --synctex=1 %<CR>
 au BufEnter,BufNew *.tex nnoremap <leader>c :w<CR>:!rubber --pdf --synctex %<CR>
 "au BufEnter,BufNew *.py   nnoremap <leader>c :w<CR>:!python %<CR>
-au BufEnter,BufNew *.txt nnoremap <leader>c :w<CR>:!pandoc % > %:r.html<CR>
-"au BufEnter,BufNew *.md nnoremap <leader>c :w<CR>:!pandoc % -o %:r.pdf<CR>
+"au BufEnter,BufNew *.txt nnoremap <leader>c :w<CR>:!pandoc % > %:r.html<CR>
+au BufEnter,BufNew *.md nnoremap <leader>c :w<CR>:!pandoc % -o %:r.pdf<CR>
+au BufEnter,BufNew *.txt nnoremap <leader>c :w<CR>:!pandoc % -o %:r.pdf<CR>
 
 "pandoc foo.md \
 "       --output=foo.html \
