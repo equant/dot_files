@@ -28,9 +28,9 @@ bindsym $mod+3 exec "i3-msg 'rename workspace F31 to temporary; rename workspace
 bindsym $mod+4 exec "i3-msg 'rename workspace F41 to temporary; rename workspace F42 to F41; rename workspace temporary to F42; workspace F41; workspace F42'"
 bindsym $mod+5 exec "i3-msg 'rename workspace F51 to temporary; rename workspace F52 to F51; rename workspace temporary to F52; workspace F51; workspace F52'"
 bindsym $mod+6 exec "i3-msg 'rename workspace F61 to temporary; rename workspace F62 to F61; rename workspace temporary to F62; workspace F61; workspace F62'"
-#bindsym $mod+7 exec "i3-msg 'rename workspace F71 to temporary; rename workspace F72 to F71; rename workspace temporary to F72; workspace F71; workspace F72'"
-#bindsym $mod+8 exec "i3-msg 'rename workspace F81 to temporary; rename workspace F82 to F81; rename workspace temporary to F82; workspace F81; workspace F82'"
-#kindsym $mod+9 exec "i3-msg 'rename workspace F91 to temporary; rename workspace F92 to F91; rename workspace temporary to F92; workspace F91; workspace F92'"
+bindsym $mod+7 exec "i3-msg 'rename workspace F71 to temporary; rename workspace F72 to F71; rename workspace temporary to F72; workspace F71; workspace F72'"
+bindsym $mod+8 exec "i3-msg 'rename workspace F81 to temporary; rename workspace F82 to F81; rename workspace temporary to F82; workspace F81; workspace F82'"
+bindsym $mod+9 exec "i3-msg 'rename workspace F91 to temporary; rename workspace F92 to F91; rename workspace temporary to F92; workspace F91; workspace F92'"
 #bindsym $mod+12 exec "i3-msg 'rename workspace F121 to temporary; rename workspace F122 to F121; rename workspace temporary to F122; workspace F121; workspace F122'"
 
 #### BEGIN NATHAN ####
@@ -215,7 +215,6 @@ bindsym $mod+Return exec gnome-terminal
 #bindsym $mod+Shift+backslash exec terminator -T Worklog -x /usr/bin/vim + /home/equant/research/WORKLOG.md
 
 #bindsym $mod+t exec terminator -T ToDo -x /usr/bin/vim + /home/equant/todo.txt
-#bindsym $mod+backslash exec terminator -T vimwiki -x /usr/bin/nvim -c ':VimwikiDiaryIndex'
 bindsym $win+backslash exec . /home/equant/git/my_bash_tools/i3_open_vimwiki.sh
 
 bindsym $win+z exec i3-msg [class='zoom'] move position mouse
