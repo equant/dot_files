@@ -16,15 +16,15 @@ execute pathogen#infect()
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "                     Vundle                     "
 """"""""""""""""""""""""""""""""""""""""""""""""""
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-"Plugin 'gmarik/Vundle.vim'
-Plugin 'preservim/tagbar'
-" add all your plugins here (note older versions of Vundle
-" used Bundle instead of Plugin)
-Plugin 'preservim/nerdtree'
-call vundle#end()
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+"Plugin 'VundleVim/Vundle.vim'
+""Plugin 'gmarik/Vundle.vim'
+"Plugin 'preservim/tagbar'
+"" add all your plugins here (note older versions of Vundle
+"" used Bundle instead of Plugin)
+"Plugin 'preservim/nerdtree'
+"call vundle#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "                 YouCompleteMe                  "

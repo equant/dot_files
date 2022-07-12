@@ -1,0 +1,8 @@
+# Set mod key (Mod1=<Alt>, Mod4=<Super>)
+set $mod Mod1
+include ~/Sync/linux/git/dot_files/i3/config-keyboard
+include ~/Sync/linux/git/dot_files/i3/config-look
+include ~/Sync/linux/git/dot_files/i3/config-apps
+include ~/Sync/linux/git/dot_files/i3/config-workspaces-laptop
+include ~/Sync/linux/git/dot_files/i3/config-gaps
+include ~/Sync/linux/git/dot_files/i3/config-sound

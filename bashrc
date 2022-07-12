@@ -94,3 +94,10 @@ fi
 if [ -f ~/git/my_bash_tools/mmgg.bash ]; then
     . ~/git/my_bash_tools/mmgg.bash
 fi
+if [ -f ~/Sync/linux/git/my_bash_tools/pdf_search.bash ]; then
+    . ~/Sync/linux/git/my_bash_tools/pdf_search.bash
+fi
+
+if [ -f ~/Sync/linux/git/my_bash_tools/mmgg.bash ]; then
+    . ~/Sync/linux/git/my_bash_tools/mmgg.bash
+fi
