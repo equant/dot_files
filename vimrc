@@ -13,6 +13,9 @@ execute pathogen#infect()
 "set nowrap
 "set linebreak # (optional - breaks by word rather than character)
 
+" list and switch to another buffer
+nnoremap gb :ls<CR>:b<Space>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "                     Vundle                     "
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -59,7 +62,7 @@ map <Space> <Leader>
 "colorscheme solarized
 "colorscheme badwolf
 "colorscheme molokai
-colorscheme jellybeans
+colorscheme delek
 syntax enable
 set tabstop=4
 set shiftwidth=4
