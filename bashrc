@@ -87,17 +87,17 @@ alias mkdb='mkdir -p backups/$(ddate); cp -p *.* backups/$(ddate)/; mv -p .*.sw*
 ################################################################################
 #                            External Bash Scripts                             #
 ################################################################################
-if [ -f ~/git/my_bash_tools/pdf_search.bash ]; then
-    . ~/git/my_bash_tools/pdf_search.bash
+if [ -f ~/nathan/git/my_bash_tools/pdf_search.bash ]; then
+    . ~/nathan/git/my_bash_tools/pdf_search.bash
 fi
 
-if [ -f ~/git/my_bash_tools/mmgg.bash ]; then
-    . ~/git/my_bash_tools/mmgg.bash
+if [ -f ~/nathan/git/my_bash_tools/mmgg.bash ]; then
+    . ~/nathan/git/my_bash_tools/mmgg.bash
 fi
-if [ -f ~/Sync/linux/git/my_bash_tools/pdf_search.bash ]; then
-    . ~/Sync/linux/git/my_bash_tools/pdf_search.bash
+if [ -f ~/nathan/git/my_bash_tools/pdf_search.bash ]; then
+    . ~/nathan/git/my_bash_tools/pdf_search.bash
 fi
 
-if [ -f ~/Sync/linux/git/my_bash_tools/mmgg.bash ]; then
-    . ~/Sync/linux/git/my_bash_tools/mmgg.bash
+if [ -f ~/nathan/git/my_bash_tools/mmgg.bash ]; then
+    . ~/nathan/git/my_bash_tools/mmgg.bash
 fi

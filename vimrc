@@ -62,7 +62,7 @@ map <Space> <Leader>
 "colorscheme solarized
 "colorscheme badwolf
 "colorscheme molokai
-colorscheme delek
+"colorscheme delek
 syntax enable
 set tabstop=4
 set shiftwidth=4
